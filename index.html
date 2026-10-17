@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>蚁巢：生存法则 | MYRMECO: COLONY PROTOCOL</title>
+  <meta name="description" content="微距昆虫世界的信息素策略塔防。蚁巢：生存法则官方网站，子域名 bug.qoder.site。">
+  <meta property="og:title" content="蚁巢：生存法则 | MYRMECO: COLONY PROTOCOL">
+  <meta property="og:description" content="微距昆虫世界的信息素策略塔防">
+  <meta property="og:image" content="assets/images/ant-world-forest-vertical-draft.png">
+  <link rel="icon" href="assets/icons/app-icon.png">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+  <div class="particles" aria-hidden="true"></div>
+  <svg class="pheromone-path" viewBox="0 0 100 2000" preserveAspectRatio="none" aria-hidden="true">
+    <defs>
+      <linearGradient id="pathGrad" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0%" stop-color="#45D9DD"/>
+        <stop offset="35%" stop-color="#E3B96B"/>
+        <stop offset="70%" stop-color="#D84FA8"/>
+        <stop offset="100%" stop-color="#F08C3A"/>
+      </linearGradient>
+    </defs>
+    <path d="M50,0 C65,120 35,240 50,360 C65,480 30,600 50,720 C70,840 25,960 50,1080 C75,1200 20,1320 50,1440 C80,1560 15,1680 50,1800 C70,1900 30,1980 50,2000" stroke="url(#pathGrad)" stroke-width="1.2" fill="none" stroke-dasharray="6,4" opacity="0.55"/>
+  </svg>
+
+  <nav class="nav" id="nav">
+    <a href="#" class="nav-logo">
+      <img src="assets/icons/app-icon.png" alt="">
+      <span>蚁巢</span>
+    </a>
+    <button class="nav-toggle" id="navToggle" aria-label="菜单" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-menu" id="navMenu">
+      <li><a href="#gameplay">玩法</a></li>
+      <li><a href="#units">兵种</a></li>
+      <li><a href="#modes">模式</a></li>
+      <li><a href="#seasons">赛季</a></li>
+      <li><a href="#roadmap">路线</a></li>
+      <li><a href="#download">下载</a></li>
+      <li><a href="#changelog">日志</a></li>
+      <li><a href="#team">团队</a></li>
+    </ul>
+  </nav>
+
+  <header class="hero" id="hero">
+    <div class="hero-content">
+      <p class="hero-subtitle">微距昆虫世界的信息素策略塔防</p>
+      <h1 class="hero-title">蚁巢：生存法则</h1>
+      <p class="hero-en">MYRMECO: COLONY PROTOCOL</p>
+      <a href="#download" class="btn btn-primary">获取游戏</a>
+      <span class="version-badge">v0.1.5473 DEMO</span>
+    </div>
+    <div class="hero-spores" aria-hidden="true"></div>
+  </header>
+
+  <main class="world">
+    <section class="section gameplay" id="gameplay">
+      <div class="section-anchor"></div>
+      <div class="scene-panel scene-panel-right">
+        <div class="panel-deco panel-deco-root"></div>
+        <h2 class="section-title">核心玩法</h2>
+        <p class="section-lead">在森林地表绘制信息素路线，招募并派遣蚁群，采集资源、抵御虫潮，在星级结算中购买永久升级，逐步扩建属于你的地下王国。</p>
+        <div class="flow">
+          <div class="flow-step"><span class="flow-glow" style="--c:#45D9DD"></span><h3>绘制路线</h3><p>拖动建立信息素路径，长度与优先级决定派兵策略；自交与障碍会触发红色无效预警。</p></div>
+          <div class="flow-step"><span class="flow-glow" style="--c:#E3B96B"></span><h3>招募兵种</h3><p>工蚁、兵蚁、喷射蚁、轰炸蚁各有职能，按路线需求编组出征。</p></div>
+          <div class="flow-step"><span class="flow-glow" style="--c:#71B98D"></span><h3>采集资源</h3><p>叶面幼虫、泥土、尸体三类资源驱动兵力补充与永久成长。</p></div>
+          <div class="flow-step"><span class="flow-glow" style="--c:#E6574F"></span><h3>拦截虫潮</h3><p>敌人按波次不断来袭，合理布防才能守住巢穴生命线。</p></div>
+          <div class="flow-step"><span class="flow-glow" style="--c:#A78BFA"></span><h3>永久升级</h3><p>星级结算购买 12 项永久升级，打造独一无二的蚁群流派。</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section features" id="features">
+      <div class="section-anchor"></div>
+      <div class="scene-panel scene-panel-left">
+        <div class="panel-deco panel-deco-leaf"></div>
+        <h2 class="section-title">特色系统</h2>
+        <div class="feature-grid">
+          <article class="feature-card"><div class="feature-icon" style="--c:#45D9DD"></div><h3>信息素路线</h3><p>长度加权派兵、优先级 1–100、命名标记、回拖撤回，策略深度由你掌控。</p></article>
+          <article class="feature-card"><div class="feature-icon" style="--c:#E6574F"></div><h3>波次虫潮</h3><p>敌人按时间表分批刷新，压力逐步升级，考验防线韧性。</p></article>
+          <article class="feature-card"><div class="feature-icon" style="--c:#71B98D"></div><h3>资源采集</h3><p>三类资源分布于战场，工蚁往返运输，支撑兵力与科技。</p></article>
+          <article class="feature-card"><div class="feature-icon" style="--c:#E3B96B"></div><h3>永久升级</h3><p>四兵种各三条升级路线，共 12 项技能，塑造专属蚁群。</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section units" id="units">
+      <div class="section-anchor"></div>
+      <div class="scene-panel scene-panel-center">
+        <h2 class="section-title">四大兵种</h2>
+        <p class="section-lead">四种蚂蚁构成完整战术体系，信息素颜色让你在混乱战场一眼识别战线。</p>
+        <div class="unit-grid">
+          <article class="unit-card worker"><div class="unit-glow"></div><h3>工蚁</h3><p>采集资源、修建路线，蚁群运转的基石。</p></article>
+          <article class="unit-card soldier"><div class="unit-glow"></div><h3>兵蚁</h3><p>近战主力，前排拦截虫潮的中坚力量。</p></article>
+          <article class="unit-card spitter"><div class="unit-glow"></div><h3>喷射蚁</h3><p>远程喷射酸液，压制成群敌人。</p></article>
+          <article class="unit-card bomber"><div class="unit-glow"></div><h3>轰炸蚁</h3><p>自爆造成范围伤害，扭转战局的关键。</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section modes" id="modes">
+      <div class="section-anchor"></div>
+      <div class="scene-panel scene-panel-right">
+        <div class="panel-deco panel-deco-crystal"></div>
+        <h2 class="section-title">游戏模式</h2>
+        <div class="mode-grid">
+          <article class="mode-card available">
+            <span class="mode-status">已上线</span>
+            <h3>蚁巢纪元</h3>
+            <p>单机战役与无限模式共 36 关。从新手教学到高难度虫潮，逐步掌握信息素战术。</p>
+          </article>
+          <article class="mode-card disabled">
+            <span class="mode-status">开发中</span>
+            <h3>群落共生 · PVE</h3>
+            <p>多名玩家在同一超大地下地图中共同防御，分工建立防线、共享资源、协同抵御多方向虫潮袭击。</p>
+          </article>
+          <article class="mode-card disabled">
+            <span class="mode-status">开发中</span>
+            <h3>虫巢试炼 · PVP</h3>
+            <p>多个玩家巢穴在同一片广袤地表/地下战场上角逐，争夺资源、扩张领地，最终只有一个巢穴能屹立不倒。</p>
+          </article>
+          <article class="mode-card available">
+            <span class="mode-status">已上线</span>
+            <h3>巢录</h3>
+            <p>成就、图鉴与统计，记录你每一次蚁巢征程的高光时刻。</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section seasons" id="seasons">
+      <div class="section-anchor"></div>
+      <div class="scene-panel scene-panel-left">
+        <div class="panel-deco panel-deco-mushroom"></div>
+        <h2 class="section-title">本赛季 · 春</h2>
+        <p class="section-lead">四季更迭，生态延展。点击大图可全屏查看，使用左右箭头或缩略图切换全部 7 个生态。</p>
+        <div class="biome-gallery" id="biomeGallery">
+          <button class="gallery-nav prev" id="galleryPrev" aria-label="上一张">‹</button>
+          <figure class="gallery-main" id="galleryMain" role="button" tabindex="0" aria-label="放大查看当前生态">
+            <img src="assets/images/biome-spring-v3.png" alt="春" id="galleryImage">
+            <figcaption>
+              <span class="gallery-season" id="gallerySeason">春</span>
+              <span class="gallery-hint">点击放大 · 共 7 个生态</span>
+            </figcaption>
+          </figure>
+          <button class="gallery-nav next" id="galleryNext" aria-label="下一张">›</button>
+        </div>
+        <div class="gallery-thumbs" id="galleryThumbs">
+          <button class="thumb active" data-index="0"><img src="assets/images/biome-spring-v3.png" alt="春"><span>春</span></button>
+          <button class="thumb" data-index="1"><img src="assets/images/biome-summer-v3.png" alt="夏"><span>夏</span></button>
+          <button class="thumb" data-index="2"><img src="assets/images/biome-autumn-v3.png" alt="秋"><span>秋</span></button>
+          <button class="thumb" data-index="3"><img src="assets/images/biome-winter-v3.png" alt="冬"><span>冬</span></button>
+          <button class="thumb" data-index="4"><img src="assets/images/biome-desert.png" alt="荒漠"><span>荒漠</span></button>
+          <button class="thumb" data-index="5"><img src="assets/images/biome-gobi.png" alt="戈壁"><span>戈壁</span></button>
+          <button class="thumb" data-index="6"><img src="assets/images/biome-swamp.png" alt="沼泽"><span>沼泽</span></button>
+        </div>
+        <p class="season-disclaimer">以上生态主题仅为未来可能扩展方向，不代表 DLC 已立项、已制作或已上线。规划仅供参考，开发存在变数。</p>
+      </div>
+    </section>
+
+    <section class="section roadmap" id="roadmap">
+      <div class="section-anchor"></div>
+      <div class="scene-panel scene-panel-center">
+        <h2 class="section-title">时间胶囊 · 开发路线</h2>
+        <p class="section-lead">📅 规划仅供参考，开发存在变数，一切以实际进度为准。</p>
+        <div class="timeline">
+          <div class="timeline-item done"><time>2026.06</time><p>项目开始，头脑风暴</p></div>
+          <div class="timeline-item done"><time>2026.09</time><p>架构选择，调研</p></div>
+          <div class="timeline-item current"><time>2026.10</time><p>DEMO 上线，玩法验证</p></div>
+          <div class="timeline-item"><time>2026.12</time><p>联机 PVE 装机测试，多人蚁群协作玩法首轮验证</p></div>
+          <div class="timeline-item"><time>2027.01–02</time><p>问题修复、压力测试，开启 PVP 小规模内部试玩</p></div>
+          <div class="timeline-item"><time>2027.03</time><p>PVP 装机测试，蚂蚁阵营对抗玩法完整落地</p></div>
+          <div class="timeline-item"><time>2027.04</time><p>宣发预热，参加 Steam Next Fest，全力冲刺愿望单</p></div>
+          <div class="timeline-item"><time>2027.05</time><p>上线前准备，服务器极限压力测试</p></div>
+          <div class="timeline-item finale"><time>2027 Q3–Q4</time><p>Steam 正式版发售</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section download" id="download">
+      <div class="section-anchor"></div>
+      <div class="scene-panel scene-panel-right">
+        <div class="panel-deco panel-deco-stone"></div>
+        <h2 class="section-title">获取游戏</h2>
+        <p class="section-lead">Android 测试 DEMO（v0.1.5473）现已开放下载，用于双端玩法验证；其余平台入口将随开发路线逐步开放。</p>
+        <div class="platform-grid">
+          <article class="platform-card available">
+            <div class="platform-icon android"></div>
+            <h3>Android</h3>
+            <p>安卓测试 DEMO</p>
+            <a class="platform-download" href="https://github.com/Guaxier/BUG-downloads/releases/download/v0.1.5473-demo/bug_v0.1.5473_demo.apk" target="_blank" rel="noopener">下载 APK · 132 MB</a>
+            <small>Android 7.0+ · arm64 / armeabi-v7a</small>
+          </article>
+          <article class="platform-card disabled">
+            <div class="platform-icon taptap"></div>
+            <h3>TapTap</h3>
+            <p>TapTap 预约</p>
+            <span class="platform-note">预计 2026.12</span>
+          </article>
+          <article class="platform-card disabled">
+            <div class="platform-icon wechat"></div>
+            <h3>微信小游戏</h3>
+            <p>微信小游戏 DEMO</p>
+            <span class="platform-note">预计 2026.12</span>
+          </article>
+          <article class="platform-card disabled">
+            <div class="platform-icon steam"></div>
+            <h3>Steam</h3>
+            <p>Steam 愿望单</p>
+            <span class="platform-note">预计 2027 Q3–Q4</span>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section changelog" id="changelog">
+      <div class="section-anchor"></div>
+      <div class="scene-panel scene-panel-left">
+        <div class="panel-deco panel-deco-scroll"></div>
+        <h2 class="section-title">更新日志</h2>
+        <div class="changelog-list">
+          <details class="changelog-item" open>
+            <summary><span class="version">0.1.5473</span><time>2026-10-17</time></summary>
+            <div class="log-body">
+              <h4>界面适配</h4>
+              <ul>
+                <li>基准分辨率改为 1280×720，适配长屏、平板与桌面窗口，消除黑边。</li>
+                <li>菜单、HUD、弹窗、设置、公告等全面贴靠安全区，遮罩铺满全屏。</li>
+                <li>相机缩放、信息素轮盘、字体超采样随屏幕比例实时换算。</li>
+              </ul>
+              <h4>测试</h4>
+              <ul><li>新增界面适配专项测试，覆盖 16:9、20:9、4:3 与模拟刘海安全区。</li></ul>
+            </div>
+          </details>
+          <details class="changelog-item">
+            <summary><span class="version">0.1.5472</span><time>2026-10-17</time></summary>
+            <div class="log-body">
+              <h4>工程</h4>
+              <ul>
+                <li>修复 Android 启动闪退：程序集名改为 ASCII「anthill」，兼容 Godot 4.6 MonoVM 加载。</li>
+                <li>桌面端重新验证，版本号统一升至 0.1.5472。</li>
+              </ul>
+            </div>
+          </details>
+          <details class="changelog-item">
+            <summary><span class="version">0.1.5471</span><time>2026-10-16</time></summary>
+            <div class="log-body">
+              <h4>游戏</h4>
+              <ul>
+                <li>修复新手教程与兵力派遣逻辑：购买先入库存，确认路线后派遣，阵亡才减员。</li>
+                <li>信息素路线支持自交草稿保留、回拖撤回、优先级 1–100、命名显示。</li>
+                <li>相机缩放平滑化，敌人生成间隔递增，敌方移速降低 30%。</li>
+              </ul>
+              <h4>界面</h4>
+              <ul>
+                <li>落实森林 UI V2，重做按钮四态、加载/暂停/结算界面、路线管理面板。</li>
+                <li>兵种轮盘改为上/左/下快捷槽 + 右侧扩展入口，支持拖拽配置与长按查看。</li>
+              </ul>
+            </div>
+          </details>
+          <details class="changelog-item">
+            <summary><span class="version">0.0.5471</span><time>2026-10-16</time></summary>
+            <div class="log-body">
+              <h4>首个正式整理版本</h4>
+              <ul>
+                <li>单机战役与无限模式共 36 关，四兵种、12 项永久升级、资源采集与虫潮战斗完整可用。</li>
+                <li>信息素路线按长度加权分配、独立出兵、自交与障碍检测、红色无效预览。</li>
+                <li>统一荒漠 CG 与翡翠果冻按钮风格，更新制作团队与署名。</li>
+              </ul>
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer" id="team">
+    <div class="footer-stone">
+      <p class="footer-title">蚁巢：生存法则</p>
+      <p class="footer-sub">MYRMECO: COLONY PROTOCOL</p>
+      <p>🍋 柠檬酸团队 · 主创：不会飞的柠檬 · 发行：七零星网络</p>
+      <p>原官网：<a href="https://bug.qilingwl.com" target="_blank" rel="noopener">bug.qilingwl.com</a></p>
+      <p class="copyright">© 2026 七零星网络. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <div class="lightbox" id="lightbox" aria-hidden="true" role="dialog" aria-modal="true" aria-label="生态大图">
+    <button class="lightbox-close" id="lightboxClose" aria-label="关闭">×</button>
+    <button class="lightbox-nav prev" id="lightboxPrev" aria-label="上一张">‹</button>
+    <figure class="lightbox-figure">
+      <img id="lightboxImage" src="" alt="">
+      <figcaption id="lightboxCaption"></figcaption>
+    </figure>
+    <button class="lightbox-nav next" id="lightboxNext" aria-label="下一张">›</button>
+  </div>
+  <div class="cursor-glow" id="cursorGlow" aria-hidden="true"></div>
+  <div class="underground-extension" aria-hidden="true"></div>
+  <script src="main.js"></script>
+</body>
+</html>
