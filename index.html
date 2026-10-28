@@ -11,6 +11,12 @@
   <meta property="og:type" content="website">
   <meta name="theme-color" content="#0D1C15">
   <link rel="icon" type="image/png" href="assets/icons/app-icon.png">
+  <!-- GitHub Pages 只作为镜像：统一跳转到服务器官网，避免下载 latest.apk 404 -->
+  <script>
+    if (location.hostname.slice(-10) === '.github.io') {
+      location.replace('https://bug.20030310.xyz/' + location.hash);
+    }
+  </script>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
