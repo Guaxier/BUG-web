@@ -1,28 +1,29 @@
 /* 蚁巢：生存法则 官网交互
-   - 下载链接解析：读取 BUG-web 最新发行版的 apk 资产；失败回退 releases/latest。
+   - 下载链接解析：读取本站 downloads/latest.json（服务器最新包），失败回退 downloads/latest.apk。
    - 导航滚动高亮、区块入场动效（尊重 prefers-reduced-motion）、画廊灯箱。 */
 (function () {
   'use strict';
 
-  var REPO_API = 'https://api.github.com/repos/Guaxier/BUG-web/releases/latest';
-  var FALLBACK = 'https://github.com/Guaxier/BUG-web/releases/latest';
+  var LATEST_API = 'downloads/latest.json';
+  var FALLBACK = 'downloads/latest.apk';
 
   function resolveDownload() {
     var links = document.querySelectorAll('.dl-link');
     var verChip = document.getElementById('ver-chip');
     var dlVer = document.getElementById('dl-ver');
     var apkName = document.getElementById('apk-name');
-    fetch(REPO_API, { headers: { Accept: 'application/vnd.github+json' } })
+    fetch(LATEST_API + '?t=' + Date.now(), { cache: 'no-store' })
       .then(function (r) { if (!r.ok) throw new Error('http ' + r.status); return r.json(); })
-      .then(function (rel) {
-        var asset = (rel.assets || []).filter(function (a) { return /\.apk$/i.test(a.name); })[0];
-        if (!asset) throw new Error('no apk asset');
-        links.forEach(function (a) { a.href = asset.browser_download_url; });
-        if (verChip) verChip.textContent = 'v' + String(rel.tag_name || '').replace(/^v/, '');
-        if (dlVer) dlVer.textContent = asset.name.replace(/\.apk$/i, '');
+      .then(function (meta) {
+        var file = String(meta.file || '');
+        if (!/\.apk$/i.test(file)) throw new Error('no apk file');
+        var href = 'downloads/' + encodeURIComponent(file);
+        links.forEach(function (a) { a.href = href; });
+        if (verChip) verChip.textContent = 'v' + String(meta.version || '').replace(/^v/, '');
+        if (dlVer) dlVer.textContent = file.replace(/\.apk$/i, '');
         if (apkName) {
-          var mb = Math.round(asset.size / 1048576);
-          apkName.textContent = '演示包 ' + asset.name + (mb ? ' · 约 ' + mb + ' MB' : '');
+          var mb = Math.round(Number(meta.size || 0) / 1048576);
+          apkName.textContent = '演示包 ' + file + (mb ? ' · 约 ' + mb + ' MB' : '');
         }
       })
       .catch(function () {
